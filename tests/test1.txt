@@ -1,0 +1,4 @@
+var x = 42;
+var y = 3.14;
+var result = x + y;
+print result;

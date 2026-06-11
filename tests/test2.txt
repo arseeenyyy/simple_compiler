@@ -1,0 +1,12 @@
+fun add(a, b) {
+    return a + b;
+}
+
+var sum = add(5, 3);
+print sum;
+
+var arr = [1, 2, 3, 4, 5];
+print arr[0];
+print arr[2];
+arr[1] = 10;
+print arr[1];

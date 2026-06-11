@@ -1,0 +1,10 @@
+var str1 = "Hello";
+var str2 = "World";
+var concat = str1 + " " + str2;
+print concat;
+
+var multiline = "Line1\nLine2";
+var quotes = "He said \"Hi\"";
+var backslash = "Path\\to\\file";
+
+print multiline;
