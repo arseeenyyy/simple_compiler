@@ -14,6 +14,8 @@ set(SOURCES
     src/Lexer.cpp
     src/Token.cpp
     src/TokenType.cpp
+    src/Parser.cpp
+    src/AST.cpp
 )
 
 add_executable(compiler ${SOURCES})
