@@ -22,11 +22,11 @@ public:
     const std::string& get_name() const { return m_name; }
     const TypeInfo& get_type() const { return m_type; }
     TypeInfo& get_type() { return m_type; }
-    bool is_user() const { return m_is_used; }
+    bool is_used() const { return m_is_used; }
     bool is_param() const { return m_is_param; }
     
-    void setUsed(bool used) { m_is_used = used; }
-    void setParameter(bool param) { m_is_param = param; }
+    void set_used(bool used) { m_is_used = used; }
+    void set_param(bool param) { m_is_param = param; }
 };
 
 
@@ -63,7 +63,7 @@ public:
     
 private:
     void visit_statement(const Statement* stmt);
-    void visit_expression(const Expression* expr);
+    ValueType visit_expression(const Expression* expr);
     
     void visit_var_statement(const VarStatement* stmt);
     void visit_print_statement(const PrintStatement* stmt);
