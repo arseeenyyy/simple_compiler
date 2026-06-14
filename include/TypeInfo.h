@@ -22,13 +22,14 @@ inline std::string_view type_to_string(ValueType type) {
 }
 
 class TypeInfo {
-public: 
+private: 
     ValueType m_type = ValueType::UNKNOWN;
     bool m_initialized = false;
     bool m_isArray = false;
     ValueType m_elementType = ValueType::UNKNOWN;
     int m_arraySize = 0;
 
+public: 
     TypeInfo() = default;
     explicit TypeInfo(ValueType type, bool is_initialized)
         : m_type(type) 
@@ -47,4 +48,14 @@ public:
         }
         return std::string(type_to_string(m_type));
     }
+    ValueType get_type() const { return m_type; }
+    bool is_initialized() const { return m_initialized; }
+    bool is_array() const { return m_isArray; }
+    ValueType get_element_type() const { return m_elementType; }
+    int get_array_size() const { return m_arraySize; }
+    bool is_known() const { return m_type != ValueType::UNKNOWN; }
+    
+    void set_initialized(bool initialized) { m_initialized = initialized; }
+    void set_type(ValueType type) { m_type = type; }
+    void set_element_type(ValueType type) { m_elementType = type; }
 };
